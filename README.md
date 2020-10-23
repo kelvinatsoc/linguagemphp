@@ -1,2 +1,3 @@
-# linguagemphp_senac
-Repositorio para a aula de Linguagem de servidor em PHP
+Aprendendo a utilizar o GIT
+
+Aula 2
