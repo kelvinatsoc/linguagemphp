@@ -8,7 +8,7 @@
 			<table border="1">
 				<tr>
 					<td>
-						<form method="post" action="cadastro.php">
+						<form method="post" action="cadastro.php" enctype='multipart/form-data'>
 							<br>
 							<font color="red">
 							<?php
@@ -34,6 +34,9 @@
 							<br>
 							<label for="conf_senha">Confirme a senha</label>
 							<input type="password" id="conf_senha" name="conf_senha" required>
+							<br><br>
+							<label for="foto">Foto</label>
+							<input type="file" id="foto" name="foto" required>
 							<br><br>
 							<input type="submit" name="cadastrar" value="Cadastrar">
 						</form>	

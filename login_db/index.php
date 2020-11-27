@@ -7,11 +7,16 @@ error_reporting(E_ALL);
 session_start();
 
 require_once 'db.php';
+require_once 'usuario/model/dados.php';
 
 //Exemplo de como fazer o salt na senha
 //$pass = password_hash('123456', PASSWORD_DEFAULT);
 
 if ( isset($_SESSION['login']) ) { //Caso o usuário já esteja logado no sistema
+
+		$foto_vetor = get_imagem_usuario( $_SESSION['id'] );
+
+		$foto = $foto_vetor[0]['foto'];
 
 		include 'header_tpl.php';
 		include 'index_menu_tpl.php';
@@ -23,7 +28,7 @@ if ( isset($_SESSION['login']) ) { //Caso o usuário já esteja logado no sistem
 	$senha = $_POST['senha'];
 
 	//Verficar se existe o usuário e pegar o hash da senha
-	$r = $db->query("SELECT senha FROM usuario WHERE email = '$login'");
+	$r = $db->query("SELECT senha, id FROM usuario WHERE email = '$login'");
 	$reg = $r->fetch(PDO::FETCH_ASSOC);
 	$hash = $reg['senha'];
 
@@ -31,6 +36,7 @@ if ( isset($_SESSION['login']) ) { //Caso o usuário já esteja logado no sistem
 	if ( password_verify( $senha, $hash) ) {
 
 		$_SESSION['login'] = $login;
+		$_SESSION['id'] = $reg['id'];
 
 		include 'header_tpl.php';
 		include 'index_menu_tpl.php';
