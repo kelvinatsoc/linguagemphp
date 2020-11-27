@@ -1,65 +1,30 @@
 <?php
 
+//Comentário de linha
 
-$clima = 'gelado';
+/*
+ *
+ *  Comentário de bloco
+ *
+ */
 
-if ($clima == 'gelado'){
-    echo "Meu pé congela";
-}
+$saldo = 34.5;//Operador de atribuição
 
-// ternario
+//Aspas duplas aceitam string especial
+echo "<br><br><br>Seu saldo é $saldo ";
 
-$bool = '1';
+//Aspas simples apenas string pura
+echo '<br><br><br>Seu saldo é $saldo ';
 
-$var = $bool === true ? '$bool é igual a true' : '$bool é diferente';
-echo $var;
+$saldo = $saldo - 10;//Operador de subtração
 
-//if com comparador 
-$frase = 'Meu pai tinha um cachorro amarelo e rosa'
-if(strpos($frase, 'Meu') !== false){
-    echo "Encontrei o Meu";
-}else{
-    echo "Não há Meu algum!";
-}
+echo "<br><br><br>Agora seu saldo é $saldo ";
 
+$saldo -= 10;//Operador de subtração
 
-// switch
+echo "<br><br><br>Agora seu saldo é $saldo ";
 
-switch ($clima){
+$saldo *= 1000;//Operador de multiplicação
 
-    case 'quente':
-    case 'tropical':    
-    
-        echo 'Adoro clima quente!';
-        if (true){
-            echo 'if dentro do switch';
-            if (true) {
-                echo ' if aninhado dentro de um switch';
-            }
-        }
-        break;
-    
-    case 'morno':
-        echo 'Morno é melhor que frio!';
-        break;
-
-    case 'frio':
-        echo ' Frio';
-        break;
-    case 'gelado':
-        echo 'gelado';
-    break;
-
-    default;  
-        echo 'Nenhum clima selecionado';
-        break;  
-}
-
-//
-
-$isso = 'vei';
-
-$isso = $isso ?? 'coisa';
-
-echo "Olha só $isso";
+echo "<br><br><br>Agora seu saldo é $saldo ";
 
